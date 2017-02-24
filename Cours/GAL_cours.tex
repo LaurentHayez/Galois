@@ -45,6 +45,8 @@
 \renewcommand{\phi}{\varphi}
 \renewcommand{\emph}{\textbf}
 \newcommand{\im}{\mathrm{Im}}
+\newcommand{\pgdc}{\mathrm{pgdc}}
+\newcommand{\ext}[2]{\overset{#1}{\underset{#2}{\text{\tiny{$|$}}}}}
 
 % ---- Synchronization with Skim
 \synctex=1
@@ -188,11 +190,16 @@
 %Table of contents
 \tableofcontents
 
-% Chapter 1: Introduction
+\setcounter{chapter}{-1}
+
+% Chapter 0: Introduction et histoire
 \input{Chapters/introduction.tex}
 
-% Chapter 2: Présentations des groupes
-\input{Chapters/chap2.tex}
+% Chapter 1: Présentations des groupes
+\input{Chapters/chap1.tex}
+
+% Chapter 2: 
+%\input{Chapters/chap2.tex}
 
 
 
