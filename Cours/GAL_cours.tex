@@ -1,0 +1,209 @@
+\documentclass[a4paper, 12pt, usenames, svgnames, chapterprefix=true]{scrreprt}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx, wrapfig}
+\usepackage{lmodern}
+\usepackage{color, colortbl}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{amsmath, amssymb, mathrsfs, amsthm, thmtools, MnSymbol}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{pgf, pgfplots, tikz, pst-solides3d}
+\usetikzlibrary{cd} %To draw commutative diagrams
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmicx, algpseudocode}
+\usepackage{listings}
+\usepackage{multicol, multirow}
+% the following patch corrects a bug for the closing parenthesis  
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\lsthk@SelectCharTable}{%
+  \lst@ifbreaklines\lst@Def{`)}{\lst@breakProcessOther)}\fi}{}{}{}
+\makeatother
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{makeidx}
+\usepackage[inline]{enumitem}
+\usepackage[francais]{babel}
+\usepackage{caption, tabu}
+\usepackage[headsepline=1pt,plainheadsepline,
+  footsepline=1pt,plainfootsepline]{scrlayer-scrpage}  % header and footer for KOMA-Script
+
+% ---- User defined commands
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Fa}{\F(A)} 
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\emph}{\textbf}
+\newcommand{\im}{\mathrm{Im}}
+
+% ---- Synchronization with Skim
+\synctex=1
+
+
+%%%%%%%%	Définitions des environnements de théorèmes	%%%%%%%%
+%----- ENVIRONNEMENT POUR LES DÉFINITIONS ----%
+\declaretheoremstyle[
+  spaceabove=0pt, spacebelow=0pt, headfont=\normalfont\bfseries\scshape,
+    notefont=\mdseries, notebraces={(}{)}, headpunct={. }, headindent={},
+    postheadspace={ }, postheadspace=4pt, bodyfont=\normalfont, %qed=$$,
+    mdframed={
+      leftmargin=-5,
+      rightmargin=-5,
+      middlelinewidth=1pt,
+      roundcorner=5pt,
+      middlelinecolor=DarkSlateGrey,
+      innerlinecolor=DarkSlateGrey,
+      outerlinecolor=DarkSlateGrey,
+      % apptotikzsetting={\tikzset{mdfbackground/.append style ={
+      %       shade, left color=DarkSlateGrey!20, right color = DarkSlateGrey!20}}}
+   }
+]{defstyle}
+
+\declaretheorem[style=defstyle, numberwithin=chapter, title=Définition]{defi}
+%________________________________________________________
+
+
+%----- ENVIRONNEMENT POUR LES THEOREMES ----%
+\declaretheoremstyle[
+  spaceabove=0pt, spacebelow=0pt, headfont=\normalfont\bfseries\scshape,
+    notefont=\mdseries, notebraces={(}{)}, headpunct={. }, headindent={},
+    postheadspace={ }, postheadspace=4pt, bodyfont=\normalfont\itshape, %qed=$$,
+    mdframed={
+      leftmargin=-5,
+      rightmargin=-5,
+      middlelinewidth=1pt,
+      roundcorner=5pt,
+      middlelinecolor=DarkOrange,
+      innerlinecolor=DarkOrange,
+      outerlinecolor=DarkOrange,
+      % apptotikzsetting={\tikzset{mdfbackground/.append style ={
+      %       shade, left color=DarkSlateGrey!20, right color = DarkSlateGrey!20}}}
+   }
+]{thmstyle}
+\declaretheorem[style=thmstyle, sibling=defi, title=Théorème]{theo}
+\declaretheorem[style=thmstyle, sibling=defi, title=Corollaire]{cor}
+\declaretheorem[style=thmstyle, sibling=defi, title=Proposition]{prop}
+\declaretheorem[style=thmstyle, sibling=defi, title=Propriétés]{propri}
+\declaretheorem[style=thmstyle, sibling=defi, title=Observation]{obs}
+\declaretheorem[style=thmstyle, sibling=defi, title=Observations]{obss}
+\declaretheorem[style=thmstyle, sibling=defi, title=Lemme]{lem}
+\declaretheorem[style=thmstyle, sibling=defi, title=Conséquence]{conseq}
+%_________________________________________________________
+
+%----- ENVIRONNEMENT POUR LES PREUVES ----%
+\declaretheoremstyle[
+  spaceabove=0pt, spacebelow=0pt, headfont=\normalfont\bfseries\scshape,
+    notefont=\mdseries, notebraces={(}{)}, headpunct={. }, headindent={},
+    postheadspace={ }, postheadspace=4pt, bodyfont=\normalfont, 
+    mdframed={
+      leftmargin=15,
+      rightmargin=15,
+      hidealllines=true,
+      font=\small
+   }
+]{preuvestyle}
+
+\declaretheorem[style=preuvestyle, numbered = no, title=Preuve, qed=\textcolor{DarkSlateGrey!80}{\qedsymbol}]{preuve}
+\declaretheorem[style=preuvestyle, title=Exercice, numberwithin=chapter, qed=\textcolor{DarkSlateGrey!80}{$\spadesuit$}]{exercice}
+\declaretheorem[style=preuvestyle, sibling=defi, title=Remarque, qed =
+\textcolor{DarkSlateGrey!80}{$\clubsuit$}]{rem}
+\declaretheorem[style=preuvestyle, sibling=defi, title=Remarques, qed = \textcolor{DarkSlateGrey!80}{$\clubsuit$}]{rems}
+%________________________________________________________
+%----- ENVIRONNEMENT POUR LES EXEMPLES ----%
+\declaretheoremstyle[
+  spaceabove=0pt, spacebelow=0pt, headfont=\normalfont\bfseries\scshape,
+    notefont=\mdseries, notebraces={(}{)}, headpunct={. }, headindent={},
+    postheadspace={ }, postheadspace=4pt, bodyfont=\normalfont, qed=\textcolor{DarkOliveGreen!80}{$\bigstar$},
+    mdframed={
+      leftmargin=15,
+      rightmargin=15,
+      font=\small,
+      outerlinewidth=1pt,
+      innerlinewidth=1pt,
+      middlelinewidth=1pt,
+      hidealllines=true,
+      topline=true,
+      bottomline=true,
+      innerlinecolor=DarkOliveGreen!80,
+      outerlinecolor=DarkOliveGreen!80,
+      middlelinecolor=DarkOliveGreen!80
+      % , leftline=true,
+      %innerlinecolor=DarkSlateGrey!80,
+      %outerlinecolor=DarkSlateGrey!80,
+      %middlelinecolor=White,
+   }
+]{exstyle}
+
+\declaretheorem[style=exstyle, numberlike=defi, title=Exemple]{ex}
+\declaretheorem[style=exstyle, numberlike=defi, title=Exemples]{exs}
+%________________________________________________________
+
+% ---- Headers and footers
+\clearpairofpagestyles                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\lohead[Université de \textsc{Neuchâtel}]{Université de \textsc{Neuchâtel}}
+\lehead[Université de \textsc{Neuchâtel}]{Université de \textsc{Neuchâtel}}        % equal page, right position (inner) 
+\rohead[\leftmark]{\leftmark}        % odd   page, left  position (inner) 
+\rehead[\rightmark]{\rightmark} % equal page, left (outer) position
+% definitions/configuration for the footer
+\lefoot[Théorie de Galois]{Théorie de Galois}
+\lofoot[Théorie de Galois]{Théorie de Galois}
+\refoot[page \pagemark]{page \pagemark}
+\rofoot[page \pagemark]{page \pagemark}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{#1}{}}
+
+
+\addtokomafont{disposition}{\normalfont\bfseries}
+
+\title{\normalfont{\bfseries{Théorie de Galois \\ {\Large printemps 2017} \\{\large Université de Neuchâtel}}}}
+\author{Enseigné par Ana \textsc{Khukhro}\\Notes prises par Laurent \textsc{Hayez}}
+\date{Date de création: 23 février 2017\\ Dernière modification: \today}
+
+\makeindex
+
+\begin{document}
+
+
+\renewcommand{\labelitemi}{\textbullet}
+
+\tikzset{math3d/.style=
+{x= {(-0.353cm,-0.353cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}}}
+
+
+\maketitle
+
+
+%Table of contents
+\tableofcontents
+
+% Chapter 1: Introduction
+\input{Chapters/introduction.tex}
+
+% Chapter 2: Présentations des groupes
+\input{Chapters/chap2.tex}
+
+
+
+
+\printindex
+	
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t 
+%%% End:
