@@ -32,8 +32,8 @@ Dans le reste du cours, tout anneau sera commutatif!
   par multiplication, et contient l'élément neutre. Par exemple, $\Z$ et $\Q$ sont des anneaux, et comme $\Z
   \subset \Q$, $\Z$ est un sous-anneau de $\Q$.
 
-\item Un \emph{idéal} $I$ de $A$ est un sous-groupe du groupe additif de $A$ tel que pour tout $x \in A$ et $a
-  \in I$, alors $xa \in I$. Par exemple $n\Z \subset \Z$ sont des idéaux de $\Z$ pour tout $n \in \N$.
+\item Un \emph{idéal} $\a$ de $A$ est un sous-groupe du groupe additif de $A$ tel que pour tout $x \in A$ et $a
+  \in \a$, alors $xa \in \a$. Par exemple $n\Z \subset \Z$ est un idéal de $\Z$ pour tout $n \in \N$.
 
 \item L'\emph{idéal principal} engendré par $a \in A$ est $Aa = \{xa \mid x \in A\} =: (a)$.
 
@@ -47,40 +47,40 @@ Dans le reste du cours, tout anneau sera commutatif!
   \item $p$ est le noyau d'un homomorphisme de $A$ dans un corps.
   \end{itemize}
 
-\item $m$ est un \emph{idéal maximal} si $m \neq A$ et $m \subset I$ un autre idéal, alors $I = m$.
+\item $m$ est un \emph{idéal maximal} si $m \neq A$ et $m \subset \a$ un autre idéal, alors $\a = m$.
 
 \item Si $m$ est maximal, alors $m$ est premier. La réciproque est vraie dans un anneau principal, un idéal
   non-nul premier est maximal.
 
-\item Chaque $I \neq A$ est contenu dans un idéal maximal.
+\item Chaque $\a \neq A$ est contenu dans un idéal maximal.
 
-\item Un anneau $K \neq 0$ est un \emph{corps} si tout élément non-nul de $K$ est inversible.
+\item Un anneau $\K \neq 0$ est un \emph{corps} si tout élément non-nul de $\K$ est inversible.
 
-\item Soit $A$ un anneau, $I$ un idéal de $A$. $I$ est premier ssi $A/I$ est intègre et $I$ est maximal ssi
-  $A/I$ est un corps.
+\item Soit $A$ un anneau, $\a$ un idéal de $A$. $\a$ est premier ssi $A/\a$ est intègre et $\a$ est maximal ssi
+  $A/\a$ est un corps.
 
-\item Soit $K$ un corps. $K[X]$ est l'anneau des polynômes à coefficients dans $K$. $K[X]$ est un anneau
+\item Soit $\K$ un corps. $\K[X]$ est l'anneau des polynômes à coefficients dans $\K$. $\K[X]$ est un anneau
   principal. 
 
-\item Les idéaux premiers de $K[X]$ sont
+\item Les idéaux premiers de $\K[X]$ sont
   \begin{itemize}
-  \item $(0)$ (car $K[X]$ est intègre);
-  \item $(f)$ pour $f \in K[X]$ est un polynôme irréductible (un élément $a \in A$, $a \neq 0$, anneau intègre, est
+  \item $(0)$ (car $\K[X]$ est intègre);
+  \item $(f)$ pour $f \in \K[X]$ est un polynôme irréductible (un élément $a \in A$, $a \neq 0$, anneau intègre, est
     \emph{irréductible} si $a$ n'est pas inversible et si $a = bc$, alors $b$ ou $c$ est inversible).
   \end{itemize}
 
 \item Un polynôme est irréductible s'il est non-constant et il n'est pas un produit de deux polynômes
   non-constants de degrés inférieurs.
 
-\item Tout idéal premier non-nul de $K[X]$ est maximal.
+\item Tout idéal premier non-nul de $\K[X]$ est maximal.
 
-\item Sont équivalentes pour $f \neq 0 \in K[X]$:
+\item Sont équivalentes pour $f \neq 0 \in \K[X]$:
   \begin{itemize}
   \item $f$ est irréductible;
   \item $(f)$ est premier;
-  \item $K[X]/(f)$ est intègre;
+  \item $\K[X]/(f)$ est intègre;
   \item $(f)$ est maximal;
-  \item $K[X]/(f)$ est un corps.
+  \item $\K[X]/(f)$ est un corps.
   \end{itemize}
 
 
@@ -88,8 +88,8 @@ Dans le reste du cours, tout anneau sera commutatif!
 
 \begin{exs}
   \begin{itemize}
-  \item $K = \R$, $f(X) = X^2 + 1$. Alors $\R[X]/(f) \simeq \C$.
-  \item $K = \F_2$, $f(X)= X^2 + X + 1$, alors $\F_2[X]/(f) \simeq \F_4$.
+  \item $\K = \R$, $f(X) = X^2 + 1$. Alors $\R[X]/(f) \simeq \C$.
+  \item $\K = \F_2$, $f(X)= X^2 + X + 1$, alors $\F_2[X]/(f) \simeq \F_4$.
   \end{itemize}
 \end{exs}
 
@@ -100,15 +100,15 @@ Dans le reste du cours, tout anneau sera commutatif!
   où $u \in A^\ast$ et $\{p_i \mid i \in I\}$ est un ensemble fini d'éléments irréductibles (unique à
   multiplication près).
 
-\item Tout anneau principal est factoriel ($\Z$, $K[X]$, ...).
+\item Tout anneau principal est factoriel ($\Z$, $\K[X]$, ...).
 
 \item Si $A$ est factoriel, alors $A[X]$ l'est aussi.
 
 \item Les éléments irréductibles de $A[X]$ sont les éléments irréductibles de $A$ et les polynômes
-  non-constant avec $\pgdc$ des coefficients égal à 1, qui restent irréductibles dans $K[X]$, où $K$ est le
+  non-constant avec $\pgdc$ des coefficients égal à 1, qui restent irréductibles dans $\K[X]$, où $\K$ est le
   corps de fractions de $A$.
 
-\item Dans un anneau factoriel, un élément irréductible $p$ engendre un idéal premier. 
+\item Dans un anneau factoriel, un élément irréductible $p$ engendre un idéal premier $\mathfrak{p} = (p)$. 
 
 \end{itemize}
 
@@ -119,13 +119,13 @@ Dans le reste du cours, tout anneau sera commutatif!
 
 \section{Critères d'irréductibilité}
 
-Soit $A$ un anneau factoriel et soit $K$ son corps de fractions. 
+Soit $A$ un anneau factoriel et soit $\K$ son corps de fractions. 
 
 \paragraph{Critère d'Eisenstein:}
 
 soit $f(X) = a_nX^n + \cdots + a_0$ un polynôme de degré $n \geq 1$ dans $A[X]$. Soit $p$ un
 élément irréductible de $A$. Si $a_n \not \equiv 0 \pmod p$, $a_i \equiv 0 \pmod p$ pour tout $i < n$ et $a_0
-\not \equiv 0 \pmod{p^2}$, alors $f(X)$ est irréductible dans $K[X]$.
+\not \equiv 0 \pmod{p^2}$, alors $f(X)$ est irréductible dans $\K[X]$.
 
 \begin{ex}
   Soit $f(X) = \frac{2}{9} X^5 + \frac{5}{3} X^4 + X^3 + \frac{1}{3} \in \Q[X]$. En multipliant par $9$, on
@@ -137,7 +137,7 @@ soit $f(X) = a_nX^n + \cdots + a_0$ un polynôme de degré $n \geq 1$ dans $A[X]
 
 soit $f(X) = a_n X^n + \cdots + a_0$ monique ($a_n = 1$) et soit $p \in A$ irréductible. Soit $\overline{f}$
 l'image de $f$ dans $A/(p)[X]$. Si $\overline{f}$ est irréductible dans $A/(p)[X]$, il l'est aussi dans $A[X]$
-(et aussi $K[X]$).
+(et aussi $\K[X]$).
 
 \begin{ex}
   Soit $f(X) = X^3 + 2X^2 + X + 5 \in \Q[X]$. On prend $p = 2$. $\overline{f}(X) = X^3 + X + 1 \in
@@ -153,17 +153,17 @@ na_nX^{n-1} + \cdots + a_1$.
 \begin{itemize}
 \item $D$ est $A$-linéaire.
 \item $D(fg) = D(f)g + fD(g)$.
-\item $D((x-a)^m) = m(x-a)^{m-1}$.
+\item $D((X-a)^m) = m(X-a)^{m-1}$.
 \end{itemize}
 
 \begin{defi}
-  Soit $K$ un corps et soit $f \in K[X]$. Soit $a \in K$ une racine de $f$. On peut écrire $f(X) =
+  Soit $\K$ un corps et soit $f \in \K[X]$. Soit $a \in \K$ une racine de $f$. On peut écrire $f(X) =
   (X-a)^{m}g(X)$ où $g(X)$ est premier avec $(X-a)$, et $m$ est appelée la \emph{multiplicité} de $a$ et on
   dit que $a$ une \emph{racine multiple} si $m > 1$.
 \end{defi}
 
 \begin{prop}
-  Un élément $a \in K$ est une racine multiple de $f$ ssi $a$ est une racine de $f$ et $D(f)(a) = 0$.
+  Un élément $a \in \K$ est une racine multiple de $f$ ssi $a$ est une racine de $f$ et $D(f)(a) = 0$.
 \end{prop}
 
 \begin{preuve}
@@ -177,22 +177,22 @@ na_nX^{n-1} + \cdots + a_1$.
 \section{Caractéristique d'un corps}
 \label{sec:caract-dun-corps}
 
-Soit $K$ un corps. On considère l'homomorphisme d'anneau 
+Soit $\K$ un corps. On considère l'homomorphisme d'anneau 
 \[
-  \begin{array}{cccc}
-    \eta & \Z & \to & K \\
+  \begin{array}{cccl}
+    \eta: & \Z & \to & \K \\
     & n & \mapsto & \mathrm{sgn}(n) \cdot (\underbrace{1 + 1 + \cdots + 1}_{n \text{ fois}})
   \end{array}
 \]
 
-$\ker(\eta)$ est un idéal premier de $\Z$, car $\Z/\ker(\eta) \simeq \mathrm{Im}(\eta) \subset K$ est un
+$\ker(\eta)$ est un idéal premier de $\Z$, car $\Z/\ker(\eta) \simeq \mathrm{Im}(\eta) \subset \K$ est un
 anneau intègre. Il y a deux cas:
 \begin{itemize}
-\item $\ker(\eta) = \{0\}$ et donc $\eta$ est injective, $\Z$ est un sous-anneau de $K$, et $K$ contient le
-  corps de fractions de $\Z$. Dans ce cas, on dit que $K$ est de \emph{caractéristique} $0$.
+\item $\ker(\eta) = \{0\}$ et donc $\eta$ est injective, $\Z$ est un sous-anneau de $\K$, et $\K$ contient le
+  corps de fractions de $\Z$. Dans ce cas, on dit que $\K$ est de \emph{caractéristique} $0$.
 
-\item $\ker(\eta) = p\Z$, $p$ premier. $p$ est la \emph{caractéristique} de $K$. Dans ce cas, $\F_p$ est un
-  sous-corps de $K$ et $\underbrace{1 + 1 + \cdots + 1}_{p \text{ fois}} = 0$ dans $K$.
+\item $\ker(\eta) = p\Z$, $p$ premier. $p$ est la \emph{caractéristique} de $\K$. Dans ce cas, $\F_p$ est un
+  sous-corps de $\K$ et $\underbrace{1 + 1 + \cdots + 1}_{p \text{ fois}} = 0$ dans $\K$.
 \end{itemize}
 
 
